@@ -1,0 +1,1039 @@
+/* Estilo general para todo el cuerpo de la página */
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: #69A78E;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Estilo de la barra de navegación */
+#navbar, #loginForm {
+  background-color: #69A78E;
+}
+
+
+.navbar {
+  border-radius: 15px;
+}
+
+/* --------------------------------------------------------------------------- LOGIN ------------------------------------------------------------------------------ */
+
+#contenedorlogin{
+  font-family: 'Raleway', sans-serif;
+  background-color: #69A78E;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+/* Estilo del botón de Logout con el ícono */
+#logout {
+  background-color: #69A78E;
+  border: none;
+  border-radius: 50%;
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+/* Estilo del formulario de login */
+#loginForm {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+}
+.form_login_required {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  transition: border-color 0.3s, transform 0.3s;
+  width: 100%;
+}
+#loginForm>div>label {
+  font-weight: 400;
+  position: absolute;
+  transform: translateY(20px) translateX(10px);
+  transition: transform 0.3s, font-size 0.3s, color 0.3s;
+}
+.div_form{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+
+}
+
+/* Modo dia / Modo noche */
+
+#loginContent.day-mode {
+  background-color: #eeeff1;
+}
+#loginContent.night-mode{
+  background-color: #333;
+}
+#loginContent.night-mode *{
+  background-color: #333;
+  color: #fff;
+}
+
+
+.form_login_required:valid + #aviso_name,
+.form_login_required:valid + #alertPass,
+.form_login_required:focus + #aviso_name,
+.form_login_required:focus + #alertPass{
+  transform: translateY(-15px);
+  font-size: 14px;
+  color: #69A78E;
+}
+.form_login_required:invalid + #alertPass,
+.form_login_required:invalid + #aviso_name{
+  color: red;
+  
+}
+
+/* Estilo del botón de Ingresar con animación de carga */
+
+
+#btn_login {
+  background-color: #69A78E;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+
+/* Agrega estilos para la pantalla de carga */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  display: none; /* Inicialmente oculto */
+}
+
+.loading-text {
+  font-size: 20px;
+}
+
+/* Estilo del checkbox "No soy un robot"*/
+#captcha {
+  margin-right: 10px;
+  width: 20px;
+}
+#checkbox_div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+#checkbox_div p {
+  margin: 0;
+}
+
+
+/* --------------------------------------------------------------------------- END LOGIN ------------------------------------------------------------------------------ */
+
+
+/* Estilo del pie de página */
+.containerBanner{
+  display: flex;
+  flex-direction: column;
+}
+footer {
+  margin-top: 40px;
+  background-color: #69A78E;
+  text-align: center;
+  padding: 10px 0;
+  color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+footer a {
+  color: #fff;
+}
+footer a:hover {
+  color: #333;
+}
+
+/* --------------------------------------------------------------------------- INDEX ------------------------------------------------------------------------------ */
+
+#content {
+  margin: 0px 50px 0px 50px;
+}
+
+
+.custom-card {
+  background: rgba(255, 255, 255, 0.9); /* Fondo difuminado blanco */
+}
+
+.album {
+  background: rgba(255, 255, 255, 0.9); /* Fondo difuminado blanco */
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.jumbotron {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.card {
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Estilos para botón 'Y mucho más!' */
+.btn-light.btn-lg {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  color: #495057;
+}
+
+.btn-light.btn-lg:hover {
+  background-color: #e9ecef;
+}
+
+/* Modo dia / Modo noche */
+
+#firstContainer.day-mode {
+  background-color: #eeeff1;
+}
+#firstContainer.night-mode{
+  background-color: #333;
+  color: #fff;
+}
+#firstContainer.night-mode*{
+  background-color: #333;
+  color: #fff;
+}
+#super_container.day-mode{
+  background-color: #eeeff1;
+  color: #333;
+}
+#super_container.night-mode *{
+  background-color: #333;
+  color: #fff;
+}
+#super_container.night-mode{
+  background-color: #333;
+  color: #fff;
+}
+
+
+/* --------------------------------------------------------------------------- END INDEX ------------------------------------------------------------------------------ */
+
+/* --------------------------------------------------------------------------- PRODUCTS ------------------------------------------------------------------------------ */
+
+#content {
+  margin: 0 20px;
+  text-align: center;
+}
+.pb-5{
+  background-color: #fff;
+}
+/* Estilo para el título de la página */
+main h1 {
+  color: #69A78E;
+  font-size: 36px;
+}
+
+/* Estilo para el cuadro de búsqueda */
+.search-container {
+  margin-top: 10px; 
+}
+
+#busqueda {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 70%;
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.3);
+}
+
+#products_class {
+  margin-top: 10px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #69A78E;
+  color: #fff;
+  cursor: pointer;
+}
+
+#container-list {
+  margin-top: 10px; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Estilo para las tarjetas de productos */
+.car-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin: 10px;
+  width: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.car-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+.car-card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Estilo para los botones de filtrar por rango */
+#filtros-por-rangos {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#filtros-por-rangos span {
+  color: #69A78E;
+  font-weight: bold;
+}
+
+#input-minimo,
+#input-maximo,
+#boton-filtrar-por-rangos {
+  margin-top: 5px; 
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #69A78E;
+  color: #fff;
+  cursor: pointer;
+}
+
+#boton-filtrar-por-rangos:hover {
+  background-color: #567e64;
+}
+#input-minimo::placeholder,
+#input-maximo::placeholder {
+  color: #fff; 
+}
+
+/* Modo dia / Modo noche */
+
+#dadContainer.day-mode {
+  background-color: #eeeff1;
+}
+#dadContainer.night-mode{
+  background-color: #333;
+  color: #fff;
+}
+#dadContainer.night-mode>.search-container * , #dadContainer.night-mode>.search-container *::placeholder{
+  background-color: #333;
+  color: #fff;
+}
+#container-list.day-mode *{
+  background-color: #eeeff1;
+  color: #333;
+}
+#container-list.day-mode *{
+  background-color: #eeeff1;
+  color: #333;
+}
+#container-list.night-mode{
+  background-color: #333;
+  color: #fff;
+}
+#container-list.night-mode *{
+  background-color: #333;
+  color: #fff;
+}
+
+/* --------------------------------------------------------------------------- END PRODUCTS ------------------------------------------------------------------------------ */
+
+/* --------------------------------------------------------------------------- PRODUCTS INFO ------------------------------------------------------------------------------ */
+
+#container-info{
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color:  #fff;
+  padding: 3%;
+}
+
+#mode-btn {
+  background-color: #69A78E;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Estilo del título principal */
+
+main h1 {
+  color: #69A78E;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Estilo de los productos relacionados */
+
+#productosRelacionados {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#productosRelacionados div {
+  width: 30%;
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#productosRelacionados div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#productosRelacionados h2 {
+  color: #69A78E;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#productosRelacionados img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+#productosRelacionados h3 {
+  color: #333;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Estilo para el carrusel */
+#carouselIMG {
+  margin-top: 20px;
+}
+
+#carouselIMG img {
+  border-radius: 10px;
+}
+
+#container-info>img{
+  width: 100%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #69A78E; 
+  border-radius: 5px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el botón Comprar */
+#publish_comment{
+  padding: 10px 20px;
+  background-color: #69A78E;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+#btnComprar{
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: #69A78E;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+#btnComprar:hover {
+  background-color: #567e64; 
+}
+
+/* Estilo para la sección de comentarios */
+#div_comment {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f8f9fa; 
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#div_comment h2 {
+  color: #69A78E;
+}
+
+#comentario {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.puntuación {
+  margin-top: 10px;
+}
+
+.puntuación .star {
+  font-size: 24px;
+  color: #69A78E;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.puntuación .star:hover {
+  color: #567e64;
+}
+
+.div-comentario {
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #69A78E;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.div-comentario:hover {
+  background-color: #567e64; 
+}
+.fa-star{
+  color: #567e64;
+}
+.checked{
+  color: gold;
+}
+
+/* Estilo para la sección de información */
+.div-texto>p {
+  position: relative;
+  background-color: #69A78E;
+  color: #fff;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.div-texto>p::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #69A78E;
+  transform: translateY(-50%);
+}
+
+/* Modo dia / Modo noche */
+
+#container-info.day-mode {
+  background-color: #eeeff1;
+}
+#container-info.night-mode{
+  background-color: #333;
+  color: #fff;
+}
+#div_comment.day-mode *{
+  background-color: #eeeff1;
+  color: #333;
+}
+#div_comment.night-mode{
+  background-color: #333;
+  color: #fff;
+}
+#div_comment.night-mode *{
+  background-color: #333;
+  color: #fff;
+}
+#productosRelacionados.day-mode *{
+  background-color: #eeeff1;
+  color: #333;
+}
+#productosRelacionados.night-mode *{
+  background-color: #333;
+  color: #fff;
+}
+
+
+/* --------------------------------------------------------------------------- END PRODUCTS INFO ------------------------------------------------------------------------------ */
+
+/* --------------------------------------------------------------------------- CATEGORIES ------------------------------------------------------------------------------ */
+
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+
+.tit_cat {
+  color: #333;
+}
+
+/* Lista de categorías */
+.list-group-item {
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.list-group-item:hover {
+  background-color: #f8f9fa;
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Filtros */
+#filtros-por-rangos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+#filtros-por-rangos span {
+  color: #69A78E;
+  font-weight: bold;
+}
+
+#rangeFilterCountMin,
+#rangeFilterCountMax,
+#rangeFilterCount,
+#clearRangeFilter {
+  background-color: #69A78E;
+  width: 200px;
+  padding: 8px 12px;
+}
+
+#rangeFilterCount,
+#rangeFilterCountMin,
+#rangeFilterCountMax,
+#clearRangeFilter {
+  margin-top: 5px; 
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #69A78E;
+  color: #fff;
+  cursor: pointer;
+}
+
+#rangeFilterCount:hover,
+#clearRangeFilter:hover {
+  background-color: #567e64;
+}
+
+#rangeFilterCountMin,
+#rangeFilterCountMax {
+  width: 300px;
+  margin-right: 10px;
+}
+#rangeFilterCountMin::placeholder,
+#rangeFilterCountMax::placeholder {
+  color: #fff; 
+}
+
+#spinner-wrapper {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid #28a745;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #28a745 transparent transparent transparent;
+}
+
+/* Modo dia / Modo noche */
+
+#mainContent.day-mode {
+  background-color: #eeeff1;
+}
+#mainContent.night-mode{
+  background-color: #333;
+  color: #fff;
+}
+#mainContent.night-mode>#div_filt>.row *{
+  background-color: #333;
+  color: #fff;
+}
+#mainContent.night-mode>#containerCategorias *{
+  background-color: #333;
+  color: #fff;
+}
+#mainContent.night-mode>#div_filt>#filtros-por-rangos>span *{
+  background-color: #333;
+  color: #fff;
+}
+
+@keyframes lds-ring {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+
+/* --------------------------------------------------------------------------- END CATEGORIES ------------------------------------------------------------------------------ */
+
+/* --------------------------------------------------------------------------- CART ------------------------------------------------------------------------------ */
+
+#containerCart{
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color:  #fff;
+  padding: 20px;
+}
+
+#tablaCarrito {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.container-info-envio {
+  margin-top: 20px;
+}
+
+.container-forma-pago {
+  margin-top: 20px;
+}
+
+#finalizarCompra {
+  margin-top: 20px;
+}
+
+tr>td>img{
+  height: 50px;
+  width: 70px;
+}
+.streetLabels {
+  color: black;
+}
+
+/* Estilos para los inputs de calle, número y esquina */
+.streetInputs {
+  border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 25%; 
+    padding: 8px; 
+    margin-bottom: 10px; 
+}
+#contenedorDeEnvios>form>div{
+  display: grid;
+  place-items: center;
+}
+
+#calculosGenerales {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+.radioInputs{
+  display: block;
+  position: relative;
+  margin: 10px;
+  }
+
+#premium #express #standard {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+}
+.card {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Estilo para los radios */
+#formPago label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Estilo para los labels y inputs */
+
+
+#formPago input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+/* Estilo para el mensaje de error */
+.error {
+  color: red;
+  margin-top: 5px;
+}
+#snackbar{
+  background: linear-gradient(to right, #4CAF50, #45a049); 
+  color: #fff;
+  font-size: 24px;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #45a049;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+}
+/* Modo dia / Modo noche */
+#containerCart.day-mode *{
+  background-color: #eeeff1;
+  color: #333;
+}
+#containerCart.night-mode{
+  background-color: #333;
+  color: #fff;
+}
+#containerCart.night-mode *{
+  background-color: #333;
+  color: #fff;
+}
+
+/* --------------------------------------------------------------------------- END CART ------------------------------------------------------------------------------ */
+
+/* --------------------------------------------------------------------------- SELL ------------------------------------------------------------------------------ */
+
+#containerDad {
+  font-family: 'Raleway', sans-serif;
+  padding: 40px;
+  max-width: 80%;
+}
+
+.container {
+  max-width: 900px;
+  border-radius: 10px;
+}
+
+#containerVender {
+  padding: 40px 0;
+}
+
+/* Formulario de venta */
+#sell-info {
+  margin: 0 auto;
+  max-width: 800px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#sell-info label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+#sell-info input,
+#sell-info select,
+#sell-info textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#sell-info input,
+#sell-info select,
+#sell-info textarea {
+  transition: all 0.3s ease-in-out;
+}
+
+#sell-info input:focus,
+#sell-info select:focus,
+#sell-info textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Botón de venta */
+#sell-info button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#radioButtons>div{
+  display: grid;
+  place-items: start;
+}
+
+#radioButtons>div>label{
+transform: translateY(-35px); 
+}
+
+#sell-info button:hover {
+  background-color: #2980b9;
+}
+
+/* Modo dia / Modo noche */
+#containerDad.day-mode {
+  background-color: #eeeff1;
+}
+
+#containerDad.night-mode {
+  background-color: #333; 
+  color: #fff;
+}
+#containerDad.night-mode * {
+  background-color: #333; 
+  color: #fff;
+}
+
+.modal-content.day-mode *{
+  background-color: #eeeff1;
+}
+.modal-content.night-mode{
+  background-color: #333; 
+  color: #fff;
+}
+
+#dropdownMenu.night-mode{
+  background-color: #333;
+}
+#dropdownMenu.night-mode *{
+  color: #fff;
+}
+
+#dropdownMenu.day-mode{
+  background-color: #eeeff1;
+}
+
+/* --------------------------------------------------------------------------- END SELL ------------------------------------------------------------------------------ */
+
+/* --------------------------------------------------------------------------- MY PROFILE ------------------------------------------------------------------------------ */
+
+#containerSup.night-mode>div>input {
+  color: #fff;
+  background-color: #333;
+}
+
+#containerSup.day-mode{
+  color: #fff;
+}
+
+/* --------------------------------------------------------------------------- END MY PROFILE ------------------------------------------------------------------------------ */
+
+/* --------------------------------------------------------------------------- RESPONSIVE DESIGN ------------------------------------------------------------------------------ */
+
+
+@media (max-width: 375px) {
+  #containerDad #containerCart #mainContent #container-info #div_comment #productosRelacionados #dadContainer #container-list #super_container #firstContainer .containerBanner #loginContent {
+    padding: 20px;
+  }
+  
+}
+
+@media (min-width: 376px) and (max-width: 720px) {
+  #containerDad #containerCart #mainContent #container-info #div_comment #productosRelacionados #dadContainer #container-list #super_container #firstContainer .containerBanner #loginContent {
+    padding: 30px;
+  }
+
+}
+
+@media (min-width: 721px) and (max-width: 1366px) {
+  #containerDad #containerCart #mainContent #container-info #div_comment #productosRelacionados #dadContainer #container-list #super_container #firstContainer .containerBanner #loginContent {
+    padding: 40px;
+  }
+}
+
+@media (min-width: 1367px) and (max-width: 1440px) {
+  #containerDad #containerCart #mainContent #container-info #div_comment #productosRelacionados #dadContainer #container-list #super_container #firstContainer .containerBanner #loginContent {
+    padding: 50px;
+  }
+}
+/* --------------------------------------------------------------------------- END RESPONSIVE DESIGN ------------------------------------------------------------------------------ */

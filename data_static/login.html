@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      const login = document.getElementById("dropdownMenu2");
+      login.textContent = "Login";
+    
+      if (!isLoggedIn && window.location.href.indexOf('login.html') === -1) {
+        // Usuario no ha iniciado sesión y no está en la página de login, redirige a login.html
+        window.location.href = 'login.html';
+      }
+    });
+  </script>
+</head>
+<body>
+  <div id="content">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-green p-1" id="navbar">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100 justify-content-between">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="categories.html">Categorías</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sell.html">Vender</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownMenu2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Login
+              </a>
+              <ul id="dropdownMenu" class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <li><a class="dropdown-item" id="menuLogin" href="login.html">Login</a></li>
+                <li><a class="dropdown-item" id="menuCart" href="cart.html">Mi carrito</a></li>
+                <li><a class="dropdown-item" id="menuProfile" href="my-profile.html">Mi perfil</a></li>
+                <li><a class="dropdown-item" id="menuLogout" href="login.html" onclick="logout">Cerrar sesión</a></li>
+              </ul>
+            </li>
+          </ul>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="contenedorlogin">
+      <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+        <p class="loading-text">Cargando...</p>
+      </div>
+  <main id="loginContent" class="mt-5">
+    <form class="container" id="loginForm">
+      <h1>Ingresa tus datos</h1>
+      <button id="logout"><img src="img/logout.svg" onclick="logout" alt=""></button>
+      <div class="div_form">
+      <input class="form_login_required" name="name" value="" id="name" type="name" required>
+      <label for="name" id="aviso_name">Email</label>
+      </div>
+      <div class="div_form">
+      <input class="form_login_required" name="password" value="" id="password" type="password" required>
+      <label for="password" id="alertPass">Contraseña</label>
+      </div>
+      <div class="div_form" id="checkbox_div">
+        <input class="form_login_required" name="captcha" type="checkbox" id="captcha" required>
+        <p>No soy un robot</p>
+      </div>
+      <button id="btn_login" type="submit">Ingresar</button>
+    </form>
+  </main>
+</div>
+  <footer class="text-muted">
+    <div class="containerBanner">
+      <p class="float-end">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+    </div>
+  </footer>
+  </div>
+  <script src="js/login.js"></script>
+</body>
+</html>

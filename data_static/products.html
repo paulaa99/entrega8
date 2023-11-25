@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>eMercado - Todo lo que busques está aquí</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
+      rel="stylesheet"
+    />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+        const login = document.getElementById("dropdownMenu2");
+        if (isLoggedIn) {
+          // Si está ingresado, que el navbar muestre el username
+          login.textContent = localStorage.getItem("nav_user");
+        } else {
+          // Si no se inició sesió, que muestre Login
+          login.textContent = "Login";
+        }
+        if (!isLoggedIn && window.location.href.indexOf("login.html") === -1) {
+          // Usuario no ha iniciado sesión y no está en la página de login, redirige a login.html
+          window.location.href = "login.html";
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div id="content">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-green p-1" id="navbar">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100 justify-content-between">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="categories.html">Categorías</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sell.html">Vender</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownMenu2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Login
+              </a>
+              <ul id="dropdownMenu" class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <li><a class="dropdown-item" id="menuLogin" href="login.html">Login</a></li>
+                <li><a class="dropdown-item" id="menuCart" href="cart.html">Mi carrito</a></li>
+                <li><a class="dropdown-item" id="menuProfile" href="my-profile.html">Mi perfil</a></li>
+                <li><button class="dropdown-item" id="mode-btn">Cambiar modo</button> </li>
+                <li><a class="dropdown-item" id="menuLogout" href="login.html" onclick="logout">Cerrar sesión</a></li>
+              </ul>
+            </li>
+          </ul>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main id="dadContainer" class="pb-5 container day-mode">
+      <h1>Productos</h1>
+      <p id="category-paragraph"></p>
+      <!-- se genera un div con el cuadro de búsqueda -->
+      <select
+        onchange="products_class(this.value)"
+        name="select"
+        id="products_class"
+      >
+        <option value="" disabled selected class="btn-check" id="sortAscPrec">
+          Ordenar...
+        </option>
+        <option value="0" class="btn-check" id="sortAscPrec">
+          Ascendente(Precio)
+        </option>
+        <option value="1" class="btn-check" id="sortDescPrec">
+          Descendente(Precio)
+        </option>
+        <option value="2" class="btn-check" id="sortDescRele">
+          Descendente(Relevancia)
+        </option>
+      </select>
+      <div id="filtros-por-rangos">
+        <span>Precio</span>
+        <input id="input-minimo" type="number" placeholder="Minimo" />
+        <input id="input-maximo" type="number" placeholder="Maximo" />
+        <button id="boton-filtrar-por-rangos">Filtrar</button>
+      </div>
+      <div class="search-container">
+        <input type="search" id="busqueda" placeholder="Buscar productos..." />
+      </div>
+      <div id="container-list"></div>
+    </main>
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-end">
+          <a href="#">Volver arriba</a>
+        </p>
+        <p>
+          Este sitio forma parte de
+          <a href="https://jovenesaprogramar.edu.uy/" target="_blank"
+            >Jovenes a Programar</a
+          >
+        </p>
+      </div>
+    </footer>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/products.js"></script>
+  </body>
+</html>

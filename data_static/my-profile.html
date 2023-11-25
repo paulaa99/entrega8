@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      const login = document.getElementById("dropdownMenu2");
+      if(isLoggedIn){
+        // Si está ingresado, que el navbar muestre el username
+        login.textContent = localStorage.getItem("nav_user");
+    } else {
+        // Si no se inició sesió, que muestre Login
+      login.textContent = "Login";
+    }
+      if (!isLoggedIn && window.location.href.indexOf('login.html') === -1) {
+        // Usuario no ha iniciado sesión y no está en la página de login, redirige a login.html
+        window.location.href = 'login.html';
+      }
+    });
+  </script>
+</head>
+<body>
+  <div id="content" class="day-mode">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-green p-1" id="navbar">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownMenu2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Login
+            </a>
+            <ul id="dropdownMenu" class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <li><a class="dropdown-item" id="menuLogin" href="login.html">Login</a></li>
+              <li><a class="dropdown-item" id="menuCart" href="cart.html">Mi carrito</a></li>
+              <li><a class="dropdown-item" id="menuProfile" href="my-profile.html">Mi perfil</a></li>
+              <li><button class="dropdown-item" id="mode-btn">Cambiar modo</button> </li>
+              <li><a class="dropdown-item" id="menuLogout" href="login.html" onclick="logout">Cerrar sesión</a></li>
+            </ul>
+          </li>
+        </ul>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="container mt-1">
+      <div class="row justify-content-center">
+        <div class="col-md-12 w-75 d-lg-block">
+          <div class="d-flex justify-content-between align-items-center">
+            <h1 class="text-center mb-4">Perfil</h1>
+            <img id="img-profile" src="https://static.vecteezy.com/system/resources/thumbnails/005/544/718/small/profile-icon-design-free-vector.jpg" alt="avatar" width="200" height="150">  
+          </div>
+          <form id="userProfileForm">
+            <div class="row" id="containerSup">
+              <div class="mb-3 col-6">
+                <label for="name" class="form-label">Nombre*</label>
+                <input type="text" id="name-myprofile" name="name" class="form-control" required>
+              </div>
+              <div class="mb-3 col-6">
+                <label for="middleName" class="form-label">Segundo Nombre</label>
+                <input type="text" id="middleName-myprofile" name="middleName" class="form-control">
+              </div>
+              <div class="mb-3 col-6">
+                <label for="surname" class="form-label">Apellido*</label>
+                <input type="text" id="surname-myprofile" name="surname" class="form-control" required>
+              </div>
+              <div class="mb-3 col-6">
+                <label for="secondSurname" class="form-label">Segundo Apellido</label>
+                <input type="text" id="secondSurname-myprofile" name="secondSurname" class="form-control">
+              </div>
+              <div class="mb-3 col-6">
+                <label for="email" class="form-label">E-mail*</label>
+                <input type="email" id="email-myprofile" name="email" class="form-control" required>
+              </div>
+              <div class="mb-3 col-6">
+                <label for="phone" class="form-label">Teléfono de contacto</label>
+                <input type="tel" id="phone-myprofile" name="phone" class="form-control">
+              </div>
+            </div>
+            <div id="profilePicture">
+              <input type="file" id="picture" name="picture">
+              <script src="my-profile.js"></script>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Guardar Perfil</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="containerPerfil">
+      <div id="perfil">
+      </div>
+    </div>
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+    </div>
+  </footer>
+  </div>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/my-profile.js"></script>
+</body>
+</html>

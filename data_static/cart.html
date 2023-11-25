@@ -1,0 +1,173 @@
+<DOCTYPE html>
+<html lang="es">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <script>
+   document.addEventListener('DOMContentLoaded', function() {
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      const login = document.getElementById("dropdownMenu2");
+      if(isLoggedIn){
+        // Si está ingresado, que el navbar muestre el username
+        login.textContent = localStorage.getItem("nav_user");
+    } else {
+        // Si no se inició sesió, que muestre Login
+      login.textContent = "Login";
+    }
+      if (!isLoggedIn && window.location.href.indexOf('login.html') === -1) {
+        // Usuario no ha iniciado sesión y no está en la página de login, redirige a login.html
+        window.location.href = 'login.html';
+      }
+
+    });
+  </script>
+</head>
+<body>
+  <div id="content">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-green p-1" id="navbar">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownMenu2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Login
+            </a>
+            <ul id="dropdownMenu" class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <li><a class="dropdown-item" id="menuLogin" href="login.html">Login</a></li>
+              <li><a class="dropdown-item" id="menuCart" href="cart.html">Mi carrito</a></li>
+              <li><a class="dropdown-item" id="menuProfile" href="my-profile.html">Mi perfil</a></li>
+              <li><button class="dropdown-item" id="mode-btn">Cambiar modo</button> </li>
+              <li><a class="dropdown-item" id="menuLogout" href="login.html" onclick="logout">Cerrar sesión</a></li>
+            </ul>
+          </li>
+        </ul>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main id="containerCart" class="day-mode">
+    <div class="container">
+      <div id="detallesCarrito">
+        <h1>Carrito de compras</h1>
+        <table id="tablaCarrito" class="table">
+          <thead class="thead">
+            <th>Imagenes</th>
+            <th>Nombre</th>
+            <th>Precio Unitario</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+          </thead>
+          <tbody id="tbody" class="tbody">
+
+          </tbody>
+        </table>
+      </div>
+      <div id="snackbar" style="display: none;"></div>
+      <div id="contenedorDeEnvios" class="container-info-envio">
+        <form>
+          <h4>Tipo de envio</h4>
+          <label class="radioInputs">
+            <input type="radio" id="premium" name="opcion" value="1"> Premium 2 a 5 dias (15%)
+          </label>
+          <label class="radioInputs">
+            <input type="radio" id="express" name="opcion" value="2"> Express 5 a 8 dias (7%)
+          </label>
+          <label class="radioInputs">
+            <input type="radio" id="standard" name="opcion" value="3"> Standard 12 a 15 dias (5%)
+          </label>
+          <p class="error" id="formaEnvioError"></p>
+          <div>
+          <h4>Direccion de envio</h4>
+          <label class="streetLabels" for="calle">Calle</label>
+          <input class="streetInputs" type="text" id="calle" name="calle" required title="Ingresa una calle válida">
+          <p class="error" id="calleError"></p>
+          <label class="streetLabels" for="numero">Número</label>
+          <input class="streetInputs" type="number" id="numero" name="numero" required pattern="\d+" title="Ingresa un número válido">
+          <p class="error" id="numeroError"></p>
+          <label class="streetLabels" for="esquina">Esquina</label>
+          <input class="streetInputs" type="text" id="esquina" name="esquina" required title="Ingresa una esquina">
+          <p class="error" id="esquinaError"></p>
+          </div>
+        </form>
+      </div>
+      <div id="calculosGenerales">
+      </div>
+      <div class="container-forma-pago">
+        <h1>Forma de pago</h1>
+        <p class="error" id="formaPagoError"></p>
+        <p>
+          <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Seleccionar
+          </a>
+        </p>
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body">
+            <form id="formPago">
+            <h5>Forma de pago</h5>
+            <hr>
+            <label class="creditLabel">
+              <input type="radio" id="credito" name="op" value="credito"> Tarjeta de crédito
+            </label>
+            <hr>
+            <input type="text" id="numero-tarjeta" name="numeroTarjeta" placeholder="Número de tarjeta" value="">
+            <input type="text" id="codigo" name="codigo" placeholder="Código de seg.">
+            <br>
+            <input type="text" id="vencimiento" name="vencimiento" placeholder="Vencimiento(MM/AA)">
+            <br>
+            <p class="error" id="tarjetaError"></p>
+            <hr>
+            <label class="creditLabel">
+              <input type="radio" id="transferencia" name="op" value="transferencia"> Transferencia bancaria
+            </label>
+            <hr>
+            <input type="text" id="numero-cuenta" name="numeroTarjeta" value="" placeholder="Número de cuenta">
+            <p class="error" id="cuentaError"></p>
+          </form>
+          </div>
+        </div>
+      </div>
+      <button id="finalizarCompra" class="btn btn-primary">Finalizar Compra</button>
+    </div>
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</div>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>
